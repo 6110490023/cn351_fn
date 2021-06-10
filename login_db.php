@@ -21,9 +21,11 @@
             $result = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($result) == 1) {
-                
+
+                $row = mysqli_fetch_array($result);
                 $_SESSION['username'] = $username;
-                $_SESSION['success'] = "Your are now logged in";
+                $_SESSION['money'] = $row['money'];
+                $_SESSION['success'] = "You are now logged in";
                 header("location: index.php");
             } else {
                 
@@ -37,5 +39,3 @@
             header("location: login.php");
         }
     }
-
-?>

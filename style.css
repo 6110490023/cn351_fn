@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
 * {
      margin: 0;
      padding: 0;
@@ -5,7 +9,6 @@
  
  body {
      font-size: 120%;
-     background: #f8f8f8;
  }
  
  .header {
@@ -20,7 +23,7 @@
      padding: 20px;
  }
  
- form {
+ #dd {
      width: 30%;
      margin: 0 auto;
      padding: 20px;
@@ -32,13 +35,13 @@
  .homeheader {
      text-align: center;
      font-size: 5rem;
+     font-family: 'Indie Flower', cursive;
  }
  
  .homecontent {
      text-align: center;
      padding-top: 3rem;
      width: 100%;
-     background: #ccc;
      height: 100vh;
  }
  
@@ -85,4 +88,13 @@
      background: #dff9d8;
      border: 1px solid #3c763d;
      margin-bottom: 20px;
+ }
+
+ .profile {
+    font-family: 'Bree Serif', serif;
+ }
+
+ .money {
+    font-family: 'Nanum Pen Script', cursive;
+    text-align: right;
  }

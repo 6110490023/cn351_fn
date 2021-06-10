@@ -1,11 +1,12 @@
 <?php
-    session_start();
-    include('server.php'); 
+session_start();
+include('server.php');
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +14,20 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div class="header">
         <h2>Login</h2>
     </div>
 
-    <form action="login_db.php" method="post">
+    <form id="dd" action="login_db.php" method="post">
         <?php if (isset($_SESSION['error'])) : ?>
             <div class="error">
                 <h3>
-                    <?php 
-                        echo $_SESSION['error'];
-                        unset($_SESSION['error']);
+                    <?php
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
                     ?>
                 </h3>
             </div>
@@ -44,4 +46,5 @@
     </form>
 
 </body>
+
 </html>
