@@ -22,18 +22,21 @@ if (!isset($_SESSION['confirm'])) {
 </head>
 
 <body>
-     <form action="success.php" method="POST">
           <div class="homeheader">
                <p> Infomation of your cart </p>
           </div>
           <div class="homecontent">
+               <form action="success.php" method="GET">
                <p> Product name : <?php $product = $_GET['product']; echo $product; ?></p>
                <p> Count : <?php $count = $_GET['count']; echo $count; ?></p>
-               <p> Total cost : <?php $cost = $_GET['total']; echo $cost; ?> $</p>
-               
+               <p> Total cost : <?php $total = $_GET['total']; echo $total; ?> $</p>
+
+               <input type="hidden" name = "product" value='<?php echo "$product"; ?>'>
+               <input type="hidden" name = "count" value='<?php echo " $count"; ?>'>
+               <input type="hidden" name = "total" value='<?php echo " $total"; ?>'>
                <input type="submit" value="confirm">
+               </form>
           </div>
-     </form>
 </body>
 
 </html>

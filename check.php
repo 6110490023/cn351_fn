@@ -19,14 +19,11 @@ if (count($errors) == 0) {
     $total;
     if (!empty($result)) {
         $row = mysqli_fetch_array($result);
-        if (gettype($row['cost']) == "string") {
-            $total = 0;
-        } else {
-            $total = $row['cost'] * $count;
-        }
+        $total = $row['cost'] * $count;
         if ($row['count'] >= $count and  $total <= $_SESSION['money']) {
             $_SESSION['confirm'] = "confirm";
-            header("location: confirm.php?total=$total&product=$product&count=$count");
+            
+            header("location: confirm.php?product=$product&count=$count&total=$total");
         } else {
             $_SESSION['error'] = " count or tatal invalid";
             header("location: index.php");
