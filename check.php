@@ -21,6 +21,8 @@
                 if($row['count'] >= $count and  $total <= $_SESSION['money']){
                     $_SESSION['confirm']= "confirm";
                     $_SESSION['total'] = $total;
+                    $_SESSION['product'] = $product;
+                    $_SESSION['count'] = $count;
                     header("location: confirm.php");
                 }
                 else{

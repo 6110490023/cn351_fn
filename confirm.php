@@ -4,10 +4,13 @@ session_start();
 include('server.php');
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
 }
+if (!isset($_SESSION['confirm'])){
+     header('location: index.php');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +23,9 @@ if (!isset($_SESSION['username'])) {
      <?php
       echo $_SESSION['confirm'];
       echo $_SESSION['total'];
+      echo $_SESSION['count'];
+      echo $_SESSION['product'];
+
      ?>
 </body>
 </html>
