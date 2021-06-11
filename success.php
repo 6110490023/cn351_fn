@@ -22,14 +22,23 @@ $result = mysqli_query($conn, $query);
 $row = mysqli_fetch_array($result);
 $money = $row['money'];
 
-$totalcount = $count - (int)$countpay;
 $totalmoney = $money - (int)$total;
+$query = "UPDATE product SET count='$totalcount' WHERE name ='$product'";
+$result = mysqli_query($conn, $query);
+$query = "UPDATE user SET money='$totalmoney' WHERE username ='$username'";
+$result = mysqli_query($conn, $query);
+$_SESSION['money'] = $totalmoney;
+
 echo $total ."</br>";
 echo $money ."</br>";
 echo $countpay ."</br>";    
 echo $count."</br>";
 echo $totalcount ."</br>";
 echo $totalmoney."</br>";
+echo "<form action = 'index.php' methon='post'>";
+echo "<input type = 'submit' value= 'submit'>";
+echo "</form>";
+
 
 ?>
 
